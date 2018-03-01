@@ -1,32 +1,78 @@
 # clojure-noob
 
-FIXME: description
+This project contains the samples from [Chapter 3 - Do Things: A Clojure Crash Course](https://www.braveclojure.com/do-things/).
 
 ## Installation
 
-Download from http://example.com/FIXME.
+```sh
+brew install leiningen
+```
 
 ## Usage
 
-FIXME: explanation
+```sh
+lein run
 
-    $ java -jar clojure-noob-0.1.0-standalone.jar [args]
+lein uberjar
+java -jar target/uberjar/clojure-noob-0.1.0-SNAPSHOT-standalone.jar
+```
 
-## Options
+## Edit setup
 
-FIXME: listing of options this app accepts.
+### Vim
 
-## Examples
+Taken from [My Clojure Toolchain: Vim](http://blog.venanti.us/clojure-vim/)
 
-...
+```vim
+Plug 'tpope/vim-fireplace'
+Plug 'vim-scripts/paredit.vim'
+Plug 'tpope/vim-surround'
+Plug 'venantius/vim-eastwood'
+Plug 'vim-syntastic/syntastic'
+Plug 'venantius/vim-cljfmt'
+```
 
-### Bugs
+### VS Code
 
-...
+[Clojure Development with Visual Studio Code](https://spin.atomicobject.com/2017/06/22/clojure-development-with-visual-studio-code/)
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+## Key Concepts
+1. Forms
+   - literals
+   - operations
+2. Binding
+   - you bind names, not assigning
+   - immutable
+   - see `let`
+3. Data structures
+   - numbers
+   - strings
+   - maps
+     - keywords (not limited to maps, see `error-message`)
+   - vectors
+   - lists
+   - sets
+   - reach for built-in data structures first!
+4. Functions
+   - **higher-order functions**
+     - functions that take another function as an argument or returns a function
+   - function arguments always evaluates all of their operands
+     - be careful with side effects
+   - special forms (e.g., `if`) do not
+   - arity-overloading
+   - rest parameter
+   - **destructuring**
+     - works with lists/vectors
+       `[[first thing]]`
+     - works with maps
+       `[{:keys [lat lng] :as treasure-location}]`
+     - can be combined with rest parameter (see `let` in `symmetrize-body-parts`)
+   - no special functions
+     - `+` is no different than `matching-part`
+   - anonymous functions
+     - syntax `(fn [x] (inc x))` or `#(inc %)`
+   - returned functions are closures
+
 
 ## License
 

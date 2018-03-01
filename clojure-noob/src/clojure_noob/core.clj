@@ -1,5 +1,6 @@
 (ns clojure-noob.core
   (:gen-class))
+(load "hobbit")
 
   (defn error-message
     [severity]
@@ -60,6 +61,8 @@
     (println (two-params "Charlie" "Eve"))
     (println (x-chop "Kanye"))
     (println (x-chop "Kanye" "judo"))
-    (doall  (map println (codger "Alice" "Bob" "Charlie" "Eve")))))
+    (doall  (map println (codger "Alice" "Bob" "Charlie" "Eve")))
+    (println "--------------------------------------------------")
+    (doseq [_ (range 10)] (println (hit asym-hobbit-body-parts)))
+    ))
 
-(load "hobbit")

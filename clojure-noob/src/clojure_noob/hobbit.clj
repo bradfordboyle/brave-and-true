@@ -36,3 +36,32 @@
         (recur remaining
                (into final-body-parts
                      (set [part (matching-part part)])))))))
+
+;; using reduce with an anonymous functions
+(defn better-symmetrize-body-parts
+  "Expects a seq of maps that have a :name and :size"
+  [asym-body-parts]
+  (reduce (fn [final-body-parts part]
+            (into final-body-parts (set [part (matching-part part)])))
+          []
+          asym-body-parts))
+
+;; same as above, but with compact notation for anonymous functions
+(defn even-better-symmetrize-body-parts
+  "Expects a seq of maps that have a :name and :size"
+  [asym-body-parts]
+  (reduce #(into %1 (set [%2 (matching-part %2)]))
+          []
+          asym-body-parts))
+
+;; hobbit violence
+(defn hit
+  [asym-body-parts]
+  (let [sym-parts (even-better-symmetrize-body-parts asym-body-parts)
+        body-part-size-sum (reduce + (map :size sym-parts))
+        target (rand body-part-size-sum)]
+    (loop [[part & remaining] sym-parts
+           accumulated-size (:size part)]
+      (if (> accumulated-size target)
+        part
+        (recur remaining (+ accumulated-size (:size (first remaining))))))))
