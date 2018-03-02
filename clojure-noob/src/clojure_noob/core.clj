@@ -1,6 +1,7 @@
 (ns clojure-noob.core
+  (:require [clojure-noob.hobbit :as hobbit])
+  (:require [clojure-noob.exercises :as exercises])
   (:gen-class))
-(load "hobbit")
 
 (defn error-message
   [severity]
@@ -63,4 +64,12 @@
     (println (x-chop "Kanye" "judo"))
     (doall  (map println (codger "Alice" "Bob" "Charlie" "Eve")))
     (println "--------------------------------------------------")
-    (doseq [_ (range 10)] (println (hit asym-hobbit-body-parts)))))
+    (doseq [_ (range 10)] (println (hobbit/hit hobbit/asym-hobbit-body-parts)))
+    (println "--------------------------------------------------")
+
+    (let [matching-parts (exercises/matching-parts-maker  #"^left-" ["right-" "up-" "down-"])
+          sym-body-parts (exercises/symmetrize-body-parts matching-parts hobbit/asym-hobbit-body-parts)]
+      (doseq
+       [_ (range 10)]
+        (println
+         (exercises/hit sym-body-parts))))))

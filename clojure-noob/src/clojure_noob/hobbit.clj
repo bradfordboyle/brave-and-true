@@ -1,4 +1,5 @@
-(in-ns 'clojure-noob.core)
+(ns clojure-noob.hobbit
+  (:gen-class))
 
 (def asym-hobbit-body-parts [{:name "head" :size 3}
                              {:name "left-eye" :size 1}
