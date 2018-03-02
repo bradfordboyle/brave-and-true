@@ -1,6 +1,6 @@
 (in-ns 'clojure-noob.core)
 
-(def asym-hobbit-body-parts [{:name "heaed" :size 3}
+(def asym-hobbit-body-parts [{:name "head" :size 3}
                              {:name "left-eye" :size 1}
                              {:name "left-ear" :size 1}
                              {:name "mouth" :size 1}

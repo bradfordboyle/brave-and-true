@@ -37,11 +37,16 @@ Plug 'venantius/vim-cljfmt'
 [Clojure Development with Visual Studio Code](https://spin.atomicobject.com/2017/06/22/clojure-development-with-visual-studio-code/)
 
 ## Key Concepts
+
 1. Forms
    - literals
    - operations
+   - sometimes referred to expression
+   - if is a special form
 2. Binding
    - you bind names, not assigning
+   - def does let you re-def things
+     - you should treat def as if it’s defining constants
    - immutable
    - see `let`
 3. Data structures
@@ -72,6 +77,13 @@ Plug 'venantius/vim-cljfmt'
    - anonymous functions
      - syntax `(fn [x] (inc x))` or `#(inc %)`
    - returned functions are closures
+
+## Questions
+
+1. Does clojure care about side-effects? `rand` makes `hit` non-pure.
+2. Is the vector parameter of a function definition considered a form?
+3. Does clojure have different copies of the same string?
+   1. why use keywords outside of maps?
 
 
 ## License
