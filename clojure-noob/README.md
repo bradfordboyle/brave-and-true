@@ -17,26 +17,7 @@ lein uberjar
 java -jar target/uberjar/clojure-noob-0.1.0-SNAPSHOT-standalone.jar
 ```
 
-## Edit setup
-
-### Vim
-
-Taken from [My Clojure Toolchain: Vim](http://blog.venanti.us/clojure-vim/)
-
-```vim
-Plug 'tpope/vim-fireplace'
-Plug 'vim-scripts/paredit.vim'
-Plug 'tpope/vim-surround'
-Plug 'venantius/vim-eastwood'
-Plug 'vim-syntastic/syntastic'
-Plug 'venantius/vim-cljfmt'
-```
-
-### VS Code
-
-[Clojure Development with Visual Studio Code](https://spin.atomicobject.com/2017/06/22/clojure-development-with-visual-studio-code/)
-
-## Key Concepts
+## Discussion & Key Concepts
 
 1. Forms
    - literals

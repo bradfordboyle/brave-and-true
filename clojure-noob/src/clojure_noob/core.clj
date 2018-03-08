@@ -62,9 +62,11 @@
     (println (two-params "Charlie" "Eve"))
     (println (x-chop "Kanye"))
     (println (x-chop "Kanye" "judo"))
-    (doall  (map println (codger "Alice" "Bob" "Charlie" "Eve")))
+    (doseq [item (codger "Alice" "Bob" "Charlie" "Eve")]
+      (println item))
     (println "--------------------------------------------------")
-    (doseq [_ (range 10)] (println (hobbit/hit hobbit/asym-hobbit-body-parts)))
+    (doseq [_ (range 10)]
+      (println (hobbit/hit hobbit/asym-hobbit-body-parts)))
     (println "--------------------------------------------------")
 
     (let [matching-parts (exercises/matching-parts-maker  #"^left-" ["right-" "up-" "down-"])
