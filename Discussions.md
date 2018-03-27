@@ -14,6 +14,9 @@
     4. map
        - as a list of vectors `([k v] [k v] ...)`
     5. What about a tree?
+       - what is the first?
+         - root, then what is rest?
+         - left most leaf, then what is cons?
 3. What is so great about seqs?
    - map
    - reduce
